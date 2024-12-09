@@ -86,7 +86,7 @@ todoRouter.get('/api/v1/todos', userMiddleware ,async (req: Request,res: Respons
 })
 
 
-todoRouter.post('/api/v1/delete/:id?', userMiddleware,async (req: Request,res: Response): Promise<any> =>{
+todoRouter.delete('/api/v1/delete/:id', userMiddleware,async (req: Request,res: Response): Promise<any> =>{
 
 try {
     const id = req.params.id
@@ -124,7 +124,7 @@ try {
 }
 })
 
-todoRouter.post('/api/v1/edit/:id?', userMiddleware, async (req: Request, res: Response): Promise<any> => {
+todoRouter.put('/api/v1/edit/:id', userMiddleware, async (req: Request, res: Response): Promise<any> => {
     const result = updateParser.safeParse(req.body);
 
     
